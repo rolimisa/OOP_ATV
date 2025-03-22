@@ -5,12 +5,7 @@
         protected $salario;
         private $senha;
 
-
-        function exibirInformacoes(){
-            echo "Nome do funcionário: {get_Nome} <br>";
-            echo "Salario: R$ {get_se} <br>";
-        }
-
+     
         function __construtc($arg01, $arg02, $arg03){
             $this->nome= $arg01;
             $this->salario = $arg02;
@@ -20,6 +15,12 @@
         public function get_Salario(){
             return $this ->salario;
         }
+
+        public function set_Salario($sa){
+            $this->salario= $sa;
+
+        }
+
 
         public function get_Senha(){
             return $this->senha;
@@ -36,10 +37,16 @@
 
         }
 
+        public function exibirInformacoes() {
+            echo "Nome: {$this->nome}<br>";
+            echo "Salário: R$ {$this->salario}<br>";
+        }
+
+
 
     }
     
-    $funcionario = new Funcionario ("José Fernando", 1900, "1234");
+    $funcionario = new Funcionario ("José Fernando", 1900, 123);
     echo $funcionario->exibirInformacoes();
     echo "<br>";
 
